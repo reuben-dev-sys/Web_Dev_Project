@@ -1,0 +1,13 @@
+ul { list-style: none; 
+    padding: 0; 
+    width: 100%; 
+    max-width: 320px; 
+    margin: 20px auto; 
+    text-align: left; 
+}
+li { background: #f8f9fa; 
+    padding: 10px; 
+    margin-bottom: 5px; 
+    border-left: 5px solid #2d6cdf; 
+    border-radius: 3px; 
+}

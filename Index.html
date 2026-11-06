@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MongoBookLog - Book Tracker</title>
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/books.css">
+</head>
+<body>
+  <div class="app-wrapper">
+    <h1 class="app-branding">MongoBookLog</h1>
+
+  
+    <div id="auth-container">
+      <div class="tabs">
+        <button id="tab-login-btn" class="active-tab" onclick="switchAuthTab('login')">Login</button>
+        <button id="tab-signup-btn" onclick="switchAuthTab('signup')">Sign Up</button>
+      </div>
+      <form id="login-form">
+        <h2>Sign In to MongoBookLog</h2>
+        <input type="text" id="login-username" placeholder="Username" required><br>
+        <input type="password" id="login-password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+      </form>
+      <form id="signup-form" style="display: none;">
+        <h2>Create an Account</h2>
+        <input type="text" id="signup-username" placeholder="Choose Username" required><br>
+        <input type="password" id="signup-password" placeholder="Choose Password" required><br>
+        <button type="submit">Register</button>
+      </form>
+      <p id="auth-msg"></p>
+    </div>
+
+    <div id="validation-container" style="display: none;">
+      <div class="success-icon">✓</div>
+      <h2>Sign In Successful!</h2>
+      <p>Welcome to MongoBookLog,</p>
+      <h3 id="validation-user"></h3>
+      <p class="success-message">Your account has been successfully verified. You can now access your book tracker.</p>
+      <button id="continue-btn">Continue</button>
+    </div>
+
+    
+    <div id="main-container" style="display: none;">
+      <h2>Welcome, <span id="user-display"></span>!</h2>
+      <button id="logout-btn" style="background-color: #d9534f; margin-bottom: 20px;">Logout</button>
+
+      <h3>Issue a New Book</h3>
+      <form id="book-form">
+        <input type="text" id="bookName" placeholder="Book Name" required><br>
+        <label for="issueDate">Date of Issue:</label><br>
+        <input type="date" id="issueDate" required><br>
+        <label for="duration">Keep Duration:</label><br>
+        <select id="duration" required>
+          <option value="">-- Choose Duration --</option>
+          <option value="1 week">1 Week</option>
+          <option value="2 weeks">2 Weeks</option>
+          <option value="3 weeks">3 Weeks</option>
+        </select><br>
+        <button type="submit">Log Book</button>
+      </form>
+      <p id="main-msg"></p>
+      <h3>Your Issued Books Log</h3>
+      <ul id="log-list"></ul>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/books.js"></script>
+</body>
+</html>
